@@ -15,9 +15,7 @@ def main():
                 z = "RIGHT"
             elif int(userinput) != solution:    # If it doesn't then:
                 z = "wrong"
-            check_list = ["That's ", z, ", you ", rng.choice(insults), "!"]  # Here are the elements for the response
-            cuntycheck = ''.join([str(elem) for elem in check_list])  # get that looking nice in an overcomplicated way
-            print(cuntycheck)   # print
+            print(f"That's {z} you {rollCuss()}!")   # print
             if z == "RIGHT":    # and if the user got the question right
                 questionroll()  # roll a new question for the loop and start again
         except:
@@ -27,33 +25,36 @@ def main():
 ## Start Other Bullshit ##
 def roll():                         # when I call roll, make
     w = rng.integers(3, high=16)    # w, which is to be a random int between 2 and 16,
-    return w                        # and give it back to me
+    return w                        # and give it back to me.
 
 def questionroll():                 # when I call questionroll,
     x = roll()                      # roll x,
     y = roll()                      # roll y,
     global question                 # Give me a question that I can use anywhere in program.
-    questionlist = [str(x), " times ", (y), "?\n"]      # Here I define the parts I will use to build the question
-    question = ''.join([str(elem) for elem in questionlist])    # Here I join the parts of questionlist for question
+    question = f"{x} times {y}?\n"  # The last two lines were a dumb method, thanks fstrings
     global solution     # Give me a solution that I can call on from anywhere,
     solution = x * y    # This is what that solution should be, as built from the same parts as the question
     return question     # After all of this, just give me back the question for now
 
+def rollCuss():                         # When I call rollCuss,
+    insult = rng.choice(insults)        # select a random insult from the list,
+    return insult                       # and give it back to me.
+
 def fuckupmessage():
-    g = rng.choice(insults)         # You get two insults if you enter the wrong input type
-    h = rng.choice(insults)         # (You're welcome)
+    g = rollCuss()                  # You get two insults if you enter the wrong input type
+    h = rollCuss()                  # (You're welcome)
     while g == h:                   # I don't want the insults to be the same
-        h = rng.choice(insults)     # So reroll the second one until it's not
+        h = rollCuss()     # So reroll the second one until it's not
     f = " a "                       # splitting the indefinite article off but defaulting to 'a',
     if h[0] in 'aeiou':             # so that if the first letter of h (second insult) is a vowel,
         f = " an "                  # I can change the preceding  article to 'an'
     print("You did a fuckup, you ", g, ", and also, you are", f, h, sep='')     # Print that looking nice (different
-                                                                                # method as only strings here)
+                                                                                # method)
 insults = ["shit gobbler",              # This is a tuple containing insults
            "arse monkey",               # They're mostly British, regional, idiosyncratic etc
-           "cum snatcher",              # Selected, curated, remembered and created for your amusement while learning
-           "dickslap",                  # You can make pull requests to add to this list but be warned your
-           "spunknapper",               # addition might not be accepted.
+           "cum snatcher",              # Selected, curated, remembered and created for your amusement while learning.
+           "dickslap",
+           "spunknapper",
            "squirt burglar",
            "jizzlip",
            "fannyflap",
@@ -89,5 +90,5 @@ insults = ["shit gobbler",              # This is a tuple containing insults
            "clunking hate machine"
            "dildonicon"
            ]
-if __name__ == '__main__':
+if __name__ == '__main__':      # When everything else is established, go back and run the main function
     main()
