@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c9ea8ca-34f2-449d-9acd-1858d8cc119a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CoproCalcuLalia.py" beforeDir="false" afterPath="$PROJECT_DIR$/CoproCalcuLalia.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -26,7 +26,7 @@ def main():
 
 ## Start Other Bullshit ##
 def roll():                         # when I call roll, make
-    w = rng.integers(2, high=16)    # w, which is to be a random int between 2 and 16,
+    w = rng.integers(3, high=16)    # w, which is to be a random int between 2 and 16,
     return w                        # and give it back to me
 
 def questionroll():                 # when I call questionroll,
